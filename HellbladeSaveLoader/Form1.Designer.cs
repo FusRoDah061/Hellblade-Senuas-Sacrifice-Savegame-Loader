@@ -35,6 +35,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.btnChangeFolder = new System.Windows.Forms.Button();
+            this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.SuspendLayout();
             // 
             // btnBackup
@@ -55,6 +56,7 @@
             this.btnLoad.TabIndex = 1;
             this.btnLoad.Text = "Load";
             this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
             // label1
             // 
@@ -97,6 +99,7 @@
             this.btnChangeFolder.TabIndex = 5;
             this.btnChangeFolder.Text = "Change save files folder location";
             this.btnChangeFolder.UseVisualStyleBackColor = true;
+            this.btnChangeFolder.Click += new System.EventHandler(this.btnChangeFolder_Click);
             // 
             // Form1
             // 
@@ -125,6 +128,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.Button btnChangeFolder;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog;
     }
 }
 

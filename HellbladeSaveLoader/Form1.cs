@@ -21,11 +21,39 @@ namespace HellbladeSaveLoader
             InitializeComponent();
 
             _config = ConfigManager.GetInstance();
+
+            _fillSavegameFiles();
         }
 
         private void btnBackup_Click(object sender, EventArgs e)
         {
             _backupSaveFile();
+        }
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            string filepath = cbxSavefiles.SelectedValue.ToString();
+            DialogResult result = MessageBox.Show("Do you want to create a backup of the current savegame file?", "Create backup?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+
+            if (result == DialogResult.Yes)
+            {
+                _backupSaveFile();
+                _loadFile(filepath);
+            }
+            else if (result == DialogResult.No)
+            {
+                _loadFile(filepath);
+            }
+        }
+
+        private void btnChangeFolder_Click(object sender, EventArgs e)
+        {
+            folderBrowserDialog.SelectedPath = _config.SaveFilesFolder;
+
+            folderBrowserDialog.ShowDialog(this);
+
+            if (!String.IsNullOrEmpty(folderBrowserDialog.SelectedPath))
+                _config.SaveFilesFolder = folderBrowserDialog.SelectedPath;
         }
 
         private void _backupSaveFile()
@@ -60,6 +88,40 @@ namespace HellbladeSaveLoader
             }
 
             return new FileInfo(pathTmp);
+        }
+
+        private void _fillSavegameFiles()
+        {
+            List<SavegameFile> files = _getPresetFiles();
+
+            if (_config.SavegameFiles != null)
+                files.AddRange(_config.SavegameFiles);
+
+            cbxSavefiles.DataSource = files;
+            cbxSavefiles.DisplayMember = "FriendlyName";
+            cbxSavefiles.ValueMember = "FileName";
+        }
+
+        private List<SavegameFile> _getPresetFiles()
+        {
+            List<SavegameFile> files = new List<SavegameFile>();
+
+            files.Add(new SavegameFile("Surt Boss Fight", @"Resources\surt_boss_fight.sav"));
+            files.Add(new SavegameFile("Valravn Boss Fight", @"Resources\valravn_boss_fight.sav"));
+            files.Add(new SavegameFile("Bridge Fight", @"Resources\bridge_fight.sav"));
+            files.Add(new SavegameFile("Fenrir Boss Fight", @"Resources\fenrir_boss_fight.sav"));
+            files.Add(new SavegameFile("Hela Boss Fight", @"Resources\hela_boss_fight.sav"));
+            
+            return files;
+        }
+
+        private void _loadFile(string filepath)
+        {
+            FileInfo newFile = new FileInfo(filepath);
+
+            newFile.CopyTo(_config.SaveFilesFolder + _config.DefaultSaveFileName + ".sav", true);
+
+            MessageBox.Show("Savegame file loaded successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

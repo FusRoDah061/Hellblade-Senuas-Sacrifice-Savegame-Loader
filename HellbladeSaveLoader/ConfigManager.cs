@@ -65,6 +65,19 @@ namespace HellbladeSaveLoader
             }
         }
 
+        public List<SavegameFile> SavegameFiles
+        {
+            get
+            {
+                List<SavegameFile> files = (List<SavegameFile>)_getItem("SavegameFiles");
+                return files;
+            }
+            set
+            {
+                _cfg["SavegameFiles"] = value;
+            }
+        }
+
         private object _getItem(string key)
         {
             object value = null;
