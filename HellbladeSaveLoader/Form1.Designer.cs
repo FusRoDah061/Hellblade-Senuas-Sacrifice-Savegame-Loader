@@ -85,7 +85,9 @@
             // 
             // openFileDialog
             // 
-            this.openFileDialog.FileName = "openFileDialog1";
+            this.openFileDialog.DefaultExt = "sav";
+            this.openFileDialog.FileName = "HellbladeSave_0";
+            this.openFileDialog.Filter = "Hellblade Savegame File|*.sav";
             // 
             // btnChangeFolder
             // 

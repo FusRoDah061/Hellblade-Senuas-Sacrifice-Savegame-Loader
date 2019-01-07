@@ -12,6 +12,9 @@ namespace HellbladeSaveLoader
 
         private const string CONFIG_NAMESPACE = "HellbladeSaveLoaderConfig";
 
+        private string SAVE_FILES_FOLDER_DEFAULT = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\HellbladeGame\Saved\SaveGames\";
+        private string DEFAULT_SAVE_FILE_NAME_DEFAULT = "HellbladeSave_0";
+
         private static ConfigManager _instance = null;
         private Config _cfg;
         
@@ -32,13 +35,47 @@ namespace HellbladeSaveLoader
         {
             get
             {
-                return _cfg["SaveFilesFolder"];
+                string value = Convert.ToString(_getItem("SaveFilesFolder"));
+                
+                if (String.IsNullOrEmpty(value))
+                    value = SAVE_FILES_FOLDER_DEFAULT;
+
+                return value;
             }
             set
             {
                 _cfg["SaveFilesFolder"] = value;
             }
         }
-        
+
+        public string DefaultSaveFileName
+        {
+            get
+            {
+                string value = Convert.ToString(_getItem("DefaultSaveFileName"));
+                
+                if (String.IsNullOrEmpty(value))
+                    value = DEFAULT_SAVE_FILE_NAME_DEFAULT;
+
+                return value;
+            }
+            set
+            {
+                _cfg["DefaultSaveFileName"] = value;
+            }
+        }
+
+        private object _getItem(string key)
+        {
+            object value = null;
+
+            try {
+                value = _cfg[key];
+            }
+            catch { }
+
+            return value;
+        }
+
     }
 }
