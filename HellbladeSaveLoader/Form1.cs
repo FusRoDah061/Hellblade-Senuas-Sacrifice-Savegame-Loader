@@ -14,6 +14,15 @@ namespace HellbladeSaveLoader
         {
             InitializeComponent();
 
+            Topbar topbar = new Topbar(this);
+            topbar.Dock = DockStyle.Top;
+            topbar.Height = 30;
+            topbar.Title = this.Text;
+
+            this.SuspendLayout();
+            this.Controls.Add(topbar);
+            this.ResumeLayout(true);
+
             _config = ConfigManager.GetInstance();
 
             _fillSavegameFiles();
