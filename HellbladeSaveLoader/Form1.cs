@@ -18,7 +18,7 @@ namespace HellbladeSaveLoader
 
             _fillSavegameFiles();
         }
-
+        
         private void btnBackup_Click(object sender, EventArgs e)
         {
             _backupSaveFile();
@@ -119,5 +119,6 @@ namespace HellbladeSaveLoader
 
             MessageBox.Show("Savegame file loaded successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+        
     }
 }
