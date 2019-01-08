@@ -63,6 +63,36 @@ namespace HellbladeSaveLoader.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Byte[].
         /// </summary>
+        internal static byte[] bridge_fight {
+            get {
+                object obj = ResourceManager.GetObject("bridge_fight", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Byte[].
+        /// </summary>
+        internal static byte[] labyrinth_trial {
+            get {
+                object obj = ResourceManager.GetObject("labyrinth_trial", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Byte[].
+        /// </summary>
+        internal static byte[] trials {
+            get {
+                object obj = ResourceManager.GetObject("trials", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Byte[].
+        /// </summary>
         internal static byte[] valravn_boss_fight {
             get {
                 object obj = ResourceManager.GetObject("valravn_boss_fight", resourceCulture);

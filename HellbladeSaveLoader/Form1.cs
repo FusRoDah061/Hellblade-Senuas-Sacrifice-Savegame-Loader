@@ -103,6 +103,8 @@ namespace HellbladeSaveLoader
             files.Add(new SavegameFile("Surt Boss Fight", @"Resources\surt_boss_fight.sav"));
             files.Add(new SavegameFile("Valravn Boss Fight", @"Resources\valravn_boss_fight.sav"));
             files.Add(new SavegameFile("Bridge Fight", @"Resources\bridge_fight.sav"));
+            files.Add(new SavegameFile("Trials", @"Resources\trials.sav"));
+            files.Add(new SavegameFile("Labyrinth Trial", @"Resources\labyrinth_trial.sav"));
             files.Add(new SavegameFile("Fenrir Boss Fight", @"Resources\fenrir_boss_fight.sav"));
             files.Add(new SavegameFile("Hela Boss Fight", @"Resources\hela_boss_fight.sav"));
             
