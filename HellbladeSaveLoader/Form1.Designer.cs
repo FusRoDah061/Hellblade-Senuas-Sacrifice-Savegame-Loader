@@ -52,7 +52,7 @@
             this.btnBackup.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
             this.btnBackup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBackup.ForeColor = System.Drawing.Color.White;
-            this.btnBackup.Location = new System.Drawing.Point(12, 344);
+            this.btnBackup.Location = new System.Drawing.Point(20, 344);
             this.btnBackup.Name = "btnBackup";
             this.btnBackup.Size = new System.Drawing.Size(399, 35);
             this.btnBackup.TabIndex = 0;
@@ -70,7 +70,7 @@
             this.btnLoad.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
             this.btnLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoad.ForeColor = System.Drawing.Color.White;
-            this.btnLoad.Location = new System.Drawing.Point(336, 300);
+            this.btnLoad.Location = new System.Drawing.Point(344, 300);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(75, 35);
             this.btnLoad.TabIndex = 1;
@@ -85,7 +85,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 278);
+            this.label1.Location = new System.Drawing.Point(20, 278);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(197, 22);
             this.label1.TabIndex = 2;
@@ -94,7 +94,7 @@
             // cbxSavefiles
             // 
             this.cbxSavefiles.FormattingEnabled = true;
-            this.cbxSavefiles.Location = new System.Drawing.Point(12, 303);
+            this.cbxSavefiles.Location = new System.Drawing.Point(20, 303);
             this.cbxSavefiles.Name = "cbxSavefiles";
             this.cbxSavefiles.Size = new System.Drawing.Size(318, 30);
             this.cbxSavefiles.TabIndex = 3;
@@ -105,7 +105,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Noto Sans Cond", 10F);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(615, 394);
+            this.label2.Location = new System.Drawing.Point(607, 394);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(141, 19);
             this.label2.TabIndex = 4;
@@ -127,7 +127,7 @@
             this.btnChangeFolder.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
             this.btnChangeFolder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChangeFolder.ForeColor = System.Drawing.Color.White;
-            this.btnChangeFolder.Location = new System.Drawing.Point(12, 385);
+            this.btnChangeFolder.Location = new System.Drawing.Point(20, 385);
             this.btnChangeFolder.Name = "btnChangeFolder";
             this.btnChangeFolder.Size = new System.Drawing.Size(399, 35);
             this.btnChangeFolder.TabIndex = 5;
@@ -140,7 +140,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::HellbladeSaveLoader.Properties.Resources.hellblade_logo;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 52);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 43);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(399, 85);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -150,7 +150,7 @@
             // pbxThumbnail
             // 
             this.pbxThumbnail.BackColor = System.Drawing.Color.Black;
-            this.pbxThumbnail.Location = new System.Drawing.Point(12, 158);
+            this.pbxThumbnail.Location = new System.Drawing.Point(20, 158);
             this.pbxThumbnail.Name = "pbxThumbnail";
             this.pbxThumbnail.Size = new System.Drawing.Size(208, 117);
             this.pbxThumbnail.TabIndex = 7;
