@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
 
@@ -35,18 +36,35 @@ namespace HellbladeSaveLoader
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
-            string filepath = cbxSavefiles.SelectedValue.ToString();
+            string filepath = ((SavegameFile) cbxSavefiles.SelectedValue).FileName;
             DialogResult result = MessageBox.Show("Do you want to create a backup of the current savegame file?", "Create backup?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
 
-            if (result == DialogResult.Yes)
+            try
             {
-                _backupSaveFile();
-                _loadFile(filepath);
+                if (result == DialogResult.Yes)
+                {
+                    _backupSaveFile();
+                    _loadFile(filepath);
+                }
+                else if (result == DialogResult.No)
+                {
+                    _loadFile(filepath);
+                }
             }
-            else if (result == DialogResult.No)
+            catch(FileNotFoundException)
             {
-                _loadFile(filepath);
+                MessageBox.Show("Couldn't find file " +  filepath, "File not found", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void cbxSavefiles_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SavegameFile selected = (SavegameFile)cbxSavefiles.SelectedValue;
+
+            if (File.Exists(selected.ThumbnailFileName))
+                pbxThumbnail.ImageLocation = selected.ThumbnailFileName;
+            else
+                pbxThumbnail.Image = null;
         }
 
         private void btnChangeFolder_Click(object sender, EventArgs e)
@@ -102,20 +120,26 @@ namespace HellbladeSaveLoader
 
             cbxSavefiles.DataSource = files;
             cbxSavefiles.DisplayMember = "FriendlyName";
-            cbxSavefiles.ValueMember = "FileName";
+            cbxSavefiles.ValueMember = null;
+           
         }
 
         private List<SavegameFile> _getPresetFiles()
         {
             List<SavegameFile> files = new List<SavegameFile>();
 
-            files.Add(new SavegameFile("Surt Boss Fight", @"Resources\surt_boss_fight.sav"));
-            files.Add(new SavegameFile("Valravn Boss Fight", @"Resources\valravn_boss_fight.sav"));
-            files.Add(new SavegameFile("Bridge Fight", @"Resources\bridge_fight.sav"));
-            files.Add(new SavegameFile("Trials", @"Resources\trials.sav"));
-            files.Add(new SavegameFile("Labyrinth Trial", @"Resources\labyrinth_trial.sav"));
-            files.Add(new SavegameFile("Fenrir Boss Fight", @"Resources\fenrir_boss_fight.sav"));
-            files.Add(new SavegameFile("Hela Boss Fight", @"Resources\hela_boss_fight.sav"));
+            files.Add(new SavegameFile("Surt Boss Fight", @"Resources\save\surt_boss_fight.sav", @"Resources\thumb\surt_boss_fight_thumb.jpg"));
+            files.Add(new SavegameFile("Valravn Boss Fight", @"Resources\save\valravn_boss_fight.sav", @"Resources\thumb\valravn_boss_fight_thumb.jpg"));
+            files.Add(new SavegameFile("Bridge Fight", @"Resources\save\bridge_fight.sav", @"Resources\thumb\bridge_fight_thumb.jpg"));
+
+            files.Add(new SavegameFile("Trials", @"Resources\save\trials.sav", @"Resources\thumb\trials_thumb.jpg"));
+            files.Add(new SavegameFile("Labyrinth Trial", @"Resources\save\labyrinth_trial.sav", @"Resources\thumb\labyrinth_trial_thumb.jpg"));
+            files.Add(new SavegameFile("Swamp Trial", @"Resources\save\swamp_trial.sav", @"Resources\thumb\swamp_trial_thumb.jpg"));
+            files.Add(new SavegameFile("Tower Trial", @"Resources\save\tower_trial.sav", @"Resources\thumb\tower_trial_thumb.jpg"));
+            files.Add(new SavegameFile("Darkness Trial", @"Resources\save\darkness_trial.sav", @"Resources\thumb\darkness_trial_thumb.jpg"));
+
+            files.Add(new SavegameFile("Garmr Boss Fight", @"Resources\save\garmr_boss_fight.sav", @"Resources\thumb\garmr_boss_fight_thumb.jpg"));
+            files.Add(new SavegameFile("Hela Boss Fight", @"Resources\save\hela_boss_fight.sav", @"Resources\thumb\hela_boss_fight_thumb.jpg"));
             
             return files;
         }
@@ -128,6 +152,10 @@ namespace HellbladeSaveLoader
 
             MessageBox.Show("Savegame file loaded successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-        
+
+        private void btnOpenFolder_Click(object sender, EventArgs e)
+        {
+            Process.Start(_config.SaveFilesFolder);
+        }
     }
 }
