@@ -103,7 +103,13 @@
     <None Include="Resources\save\darkness_trial.sav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Resources\save\garmr_boss_fight.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Resources\save\labyrinth_trial.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\save\sea_of_corpses.sav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Resources\save\swamp_trial.sav">
@@ -126,13 +132,16 @@
     <None Include="Resources\background.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\background2.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\hellblade-logo.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
+    <Content Include="Resources\thumb\darkness_trial_thumb.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\thumb\garmr_boss_fight_thumb.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\thumb\swamp_trial_thumb.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

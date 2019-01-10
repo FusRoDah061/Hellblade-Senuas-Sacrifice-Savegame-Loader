@@ -73,16 +73,6 @@ namespace HellbladeSaveLoader.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap background2 {
-            get {
-                object obj = ResourceManager.GetObject("background2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap hellblade_logo {
             get {
                 object obj = ResourceManager.GetObject("hellblade_logo", resourceCulture);

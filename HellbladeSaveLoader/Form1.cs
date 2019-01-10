@@ -138,6 +138,8 @@ namespace HellbladeSaveLoader
             files.Add(new SavegameFile("Tower Trial", @"Resources\save\tower_trial.sav", @"Resources\thumb\tower_trial_thumb.jpg"));
             files.Add(new SavegameFile("Darkness Trial", @"Resources\save\darkness_trial.sav", @"Resources\thumb\darkness_trial_thumb.jpg"));
 
+            files.Add(new SavegameFile("Sea of Corpses", @"Resources\save\sea_of_corpses.sav", @"Resources\thumb\sea_of_corpses_thumb.jpg"));
+
             files.Add(new SavegameFile("Garmr Boss Fight", @"Resources\save\garmr_boss_fight.sav", @"Resources\thumb\garmr_boss_fight_thumb.jpg"));
             files.Add(new SavegameFile("Hela Boss Fight", @"Resources\save\hela_boss_fight.sav", @"Resources\thumb\hela_boss_fight_thumb.jpg"));
             
