@@ -141,6 +141,7 @@ namespace HellbladeSaveLoader
             files.Add(new SavegameFile("Sea of Corpses", @"Resources\save\sea_of_corpses.sav", @"Resources\thumb\sea_of_corpses_thumb.jpg"));
 
             files.Add(new SavegameFile("Garmr Boss Fight", @"Resources\save\garmr_boss_fight.sav", @"Resources\thumb\garmr_boss_fight_thumb.jpg"));
+            files.Add(new SavegameFile("Hela's Bridge Fight", @"Resources\save\hela_bridge_fight.sav", @"Resources\thumb\hela_bridge_fight_thumb.jpg"));
             files.Add(new SavegameFile("Hela Boss Fight", @"Resources\save\hela_boss_fight.sav", @"Resources\thumb\hela_boss_fight_thumb.jpg"));
             
             return files;
