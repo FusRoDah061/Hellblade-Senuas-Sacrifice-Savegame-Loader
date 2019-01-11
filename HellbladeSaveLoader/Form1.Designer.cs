@@ -40,6 +40,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pbxThumbnail = new System.Windows.Forms.PictureBox();
             this.btnOpenFolder = new System.Windows.Forms.Button();
+            this.btnNew = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxThumbnail)).BeginInit();
             this.SuspendLayout();
@@ -53,9 +54,9 @@
             this.btnBackup.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
             this.btnBackup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBackup.ForeColor = System.Drawing.Color.White;
-            this.btnBackup.Location = new System.Drawing.Point(20, 313);
+            this.btnBackup.Location = new System.Drawing.Point(12, 293);
             this.btnBackup.Name = "btnBackup";
-            this.btnBackup.Size = new System.Drawing.Size(399, 30);
+            this.btnBackup.Size = new System.Drawing.Size(411, 30);
             this.btnBackup.TabIndex = 0;
             this.btnBackup.Text = "Backup current savefile";
             this.btnBackup.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -71,9 +72,9 @@
             this.btnLoad.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
             this.btnLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoad.ForeColor = System.Drawing.Color.White;
-            this.btnLoad.Location = new System.Drawing.Point(344, 277);
+            this.btnLoad.Location = new System.Drawing.Point(226, 211);
             this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(75, 30);
+            this.btnLoad.Size = new System.Drawing.Size(197, 30);
             this.btnLoad.TabIndex = 1;
             this.btnLoad.Text = "Load";
             this.btnLoad.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -86,7 +87,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(20, 252);
+            this.label1.Location = new System.Drawing.Point(226, 148);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(197, 22);
             this.label1.TabIndex = 2;
@@ -95,9 +96,9 @@
             // cbxSavefiles
             // 
             this.cbxSavefiles.FormattingEnabled = true;
-            this.cbxSavefiles.Location = new System.Drawing.Point(20, 277);
+            this.cbxSavefiles.Location = new System.Drawing.Point(226, 175);
             this.cbxSavefiles.Name = "cbxSavefiles";
-            this.cbxSavefiles.Size = new System.Drawing.Size(318, 30);
+            this.cbxSavefiles.Size = new System.Drawing.Size(197, 30);
             this.cbxSavefiles.TabIndex = 3;
             this.cbxSavefiles.SelectedIndexChanged += new System.EventHandler(this.cbxSavefiles_SelectedIndexChanged);
             // 
@@ -129,9 +130,9 @@
             this.btnChangeFolder.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
             this.btnChangeFolder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChangeFolder.ForeColor = System.Drawing.Color.White;
-            this.btnChangeFolder.Location = new System.Drawing.Point(20, 349);
+            this.btnChangeFolder.Location = new System.Drawing.Point(12, 333);
             this.btnChangeFolder.Name = "btnChangeFolder";
-            this.btnChangeFolder.Size = new System.Drawing.Size(399, 30);
+            this.btnChangeFolder.Size = new System.Drawing.Size(411, 30);
             this.btnChangeFolder.TabIndex = 5;
             this.btnChangeFolder.Text = "Change save files folder location";
             this.btnChangeFolder.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -142,7 +143,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::HellbladeSaveLoader.Properties.Resources.hellblade_logo;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 34);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 45);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(399, 85);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -152,7 +153,7 @@
             // pbxThumbnail
             // 
             this.pbxThumbnail.BackColor = System.Drawing.Color.Black;
-            this.pbxThumbnail.Location = new System.Drawing.Point(20, 128);
+            this.pbxThumbnail.Location = new System.Drawing.Point(12, 153);
             this.pbxThumbnail.Name = "pbxThumbnail";
             this.pbxThumbnail.Size = new System.Drawing.Size(208, 117);
             this.pbxThumbnail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -168,14 +169,32 @@
             this.btnOpenFolder.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
             this.btnOpenFolder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOpenFolder.ForeColor = System.Drawing.Color.White;
-            this.btnOpenFolder.Location = new System.Drawing.Point(24, 385);
+            this.btnOpenFolder.Location = new System.Drawing.Point(12, 373);
             this.btnOpenFolder.Name = "btnOpenFolder";
-            this.btnOpenFolder.Size = new System.Drawing.Size(399, 30);
+            this.btnOpenFolder.Size = new System.Drawing.Size(411, 30);
             this.btnOpenFolder.TabIndex = 8;
             this.btnOpenFolder.Text = "Navigate to savegame files folder";
             this.btnOpenFolder.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnOpenFolder.UseVisualStyleBackColor = false;
             this.btnOpenFolder.Click += new System.EventHandler(this.btnOpenFolder_Click);
+            // 
+            // btnNew
+            // 
+            this.btnNew.BackColor = System.Drawing.Color.Transparent;
+            this.btnNew.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNew.FlatAppearance.BorderSize = 0;
+            this.btnNew.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnNew.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
+            this.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNew.ForeColor = System.Drawing.Color.White;
+            this.btnNew.Location = new System.Drawing.Point(226, 247);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(197, 30);
+            this.btnNew.TabIndex = 9;
+            this.btnNew.Text = "Add new file";
+            this.btnNew.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNew.UseVisualStyleBackColor = false;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // Form1
             // 
@@ -183,6 +202,7 @@
             this.BackgroundImage = global::HellbladeSaveLoader.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(768, 432);
+            this.Controls.Add(this.btnNew);
             this.Controls.Add(this.btnOpenFolder);
             this.Controls.Add(this.pbxThumbnail);
             this.Controls.Add(this.pictureBox1);
@@ -218,6 +238,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pbxThumbnail;
         private System.Windows.Forms.Button btnOpenFolder;
+        private System.Windows.Forms.Button btnNew;
     }
 }
 

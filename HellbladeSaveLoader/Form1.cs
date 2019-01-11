@@ -113,21 +113,42 @@ namespace HellbladeSaveLoader
 
         private void _fillSavegameFiles()
         {
-            List<SavegameFile> files = _getPresetFiles();
-
-            if (_config.SavegameFiles != null)
-                files.AddRange(_config.SavegameFiles);
-
+            List<SavegameFile> files = _getSavedFiles();
+            
             cbxSavefiles.DataSource = files;
             cbxSavefiles.DisplayMember = "FriendlyName";
             cbxSavefiles.ValueMember = null;
            
         }
 
+        private List<SavegameFile> _getSavedFiles()
+        {
+            List<SavegameFile> files = _config.SavegameFiles;
+
+            if (files != null)
+            {
+                if (files.Count <= 0)
+                {
+                    files = _getPresetFiles();
+                    _config.SavegameFiles = files;
+                }
+            }
+            else
+            {
+                files = new List<SavegameFile>();
+
+                files = _getPresetFiles();
+
+                _config.SavegameFiles = files;
+            }
+
+            return files;
+        }
+
         private List<SavegameFile> _getPresetFiles()
         {
             List<SavegameFile> files = new List<SavegameFile>();
-
+            
             files.Add(new SavegameFile("Surt Boss Fight", @"Resources\save\surt_boss_fight.sav", @"Resources\thumb\surt_boss_fight_thumb.jpg"));
             files.Add(new SavegameFile("Valravn Boss Fight", @"Resources\save\valravn_boss_fight.sav", @"Resources\thumb\valravn_boss_fight_thumb.jpg"));
             files.Add(new SavegameFile("Bridge Fight", @"Resources\save\bridge_fight.sav", @"Resources\thumb\bridge_fight_thumb.jpg"));
@@ -159,6 +180,29 @@ namespace HellbladeSaveLoader
         private void btnOpenFolder_Click(object sender, EventArgs e)
         {
             Process.Start(_config.SaveFilesFolder);
+        }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            NewFileDialog dialog = new NewFileDialog();
+
+            if(dialog.ShowDialog(this) == DialogResult.OK)
+            {
+                _updateSavegameFiles(dialog.SavegameFile);
+            }
+        }
+
+        private void _updateSavegameFiles(SavegameFile saveFile)
+        {
+            List<SavegameFile> saves = _config.SavegameFiles;
+            saves.Add(saveFile);
+
+            _config.SavegameFiles = saves;
+
+            cbxSavefiles.DataSource = _config.SavegameFiles;
+            cbxSavefiles.DisplayMember = "FriendlyName";
+            cbxSavefiles.ValueMember = null;
+
         }
     }
 }

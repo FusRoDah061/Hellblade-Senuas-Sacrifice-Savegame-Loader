@@ -1,4 +1,5 @@
-﻿using SharpConfig;
+﻿using Newtonsoft.Json.Linq;
+using SharpConfig;
 using System;
 using System.Collections.Generic;
 
@@ -66,8 +67,7 @@ namespace HellbladeSaveLoader
         {
             get
             {
-                List<SavegameFile> files = (List<SavegameFile>)_getItem("SavegameFiles");
-                return files;
+                return _getSavegamesList();
             }
             set
             {
@@ -85,6 +85,21 @@ namespace HellbladeSaveLoader
             catch { }
 
             return value;
+        }
+
+        private List<SavegameFile> _getSavegamesList()
+        {
+            object list = _getItem("SavegameFiles");
+
+            if (list.GetType() == typeof(JArray))
+            {
+                JArray collection = (JArray)list;
+                return collection.ToObject<List<SavegameFile>>();
+            }
+            else
+            {
+                return (List<SavegameFile>)list;
+            }
         }
 
     }
