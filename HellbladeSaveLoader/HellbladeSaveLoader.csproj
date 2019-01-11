@@ -127,6 +127,9 @@
     <None Include="Resources\save\sea_of_corpses.sav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Resources\save\surt_boss_fight.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Resources\save\swamp_trial.sav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
