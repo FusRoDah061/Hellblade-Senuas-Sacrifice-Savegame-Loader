@@ -91,6 +91,8 @@ namespace HellbladeSaveLoader
         {
             object list = _getItem("SavegameFiles");
 
+            if (list == null) return new List<SavegameFile>();
+
             if (list.GetType() == typeof(JArray))
             {
                 JArray collection = (JArray)list;
