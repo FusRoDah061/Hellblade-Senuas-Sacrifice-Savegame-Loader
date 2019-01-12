@@ -14,6 +14,8 @@ There are a few predefined files, of moments in the game that I liked personally
 
 You can add your own, though.
 
+[Download here](https://github.com/FusRoDah061/Hellblade-Senuas-Sacrifice-Savegame-Loader/releases/tag/v1.0)
+
 ## Interface
 ![Program interface](/ui.jpg)
 
